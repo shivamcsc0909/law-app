@@ -1,0 +1,49 @@
+{
+  "expo": {
+    "name": "NyayaSetu",
+    "slug": "nyayasetu-india",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0B192C"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "in.nyayasetu.app",
+      "infoPlist": {
+        "NSMicrophoneUsageDescription": "NyayaSetu requires microphone access for voice-based legal problem intake in Hindi and English.",
+        "NSPhotoLibraryUsageDescription": "NyayaSetu requires photo access to attach case documents, Bar Council certificates, and Legal CVs.",
+        "NSCameraUsageDescription": "NyayaSetu requires camera access to scan physical legal documents and certificates.",
+        "NSLocationWhenInUseUsageDescription": "NyayaSetu uses your location to discover nearby advocates, High Courts, and district chambers."
+      }
+    },
+    "android": {
+      "package": "in.nyayasetu.app",
+      "versionCode": 1,
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#0B192C"
+      },
+      "permissions": [
+        "RECORD_AUDIO",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE",
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION",
+        "CAMERA"
+      ]
+    },
+    "extra": {
+      "eas": {
+        "projectId": "nyayasetu-india-legal"
+      }
+    }
+  }
+}

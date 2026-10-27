@@ -1,0 +1,26 @@
+# Hostinger Apache Configuration for NyayaSetu
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # Route all /api/* requests to api/index.php
+    RewriteCond %{REQUEST_URI} ^/api(/.*)?$ [NC]
+    RewriteRule ^api(/.*)?$ api/index.php [QSA,L]
+
+    # Serve uploads directly
+    RewriteCond %{REQUEST_URI} ^/uploads(/.*)?$ [NC]
+    RewriteRule ^uploads/(.*)$ uploads/$1 [L]
+
+    # Serve admin static files if available
+    RewriteCond %{REQUEST_URI} ^/admin(/.*)?$ [NC]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^admin(/.*)?$ admin/index.html [L]
+</IfModule>
+
+# Security Headers
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-XSS-Protection "1; mode=block"
+</IfModule>
